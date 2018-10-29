@@ -21,7 +21,7 @@ public class Skeleton : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        transform.LookAt(GameObject.Find("Feet").transform);
+        transform.LookAt(GameObject.Find("Player").transform);
         if(playerIsInRoom)
         {
             transform.Translate(new Vector3(0, 0, 1 * Time.deltaTime));

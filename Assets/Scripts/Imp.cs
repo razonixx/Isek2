@@ -39,10 +39,10 @@ public class Imp : MonoBehaviour {
         {
             if (hit.transform.tag == toCheck.tag)
             {
-                Debug.Log("Imp ray collisioned with: Player");
+                //Debug.Log("Imp ray collisioned with: Player");
                 return true;
             }
-            Debug.Log("Imp ray collisioned with: " + hit.transform.gameObject.name);
+            //Debug.Log("Imp ray collisioned with: " + hit.transform.gameObject.name);
             return false;
         }
         return true;
