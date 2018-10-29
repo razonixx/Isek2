@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     public float CamR = 0.4f;
     public bool isDualWeilding = false;
     public bool isFreeze = false;
+    public bool hasBossKey = false;
 #pragma warning disable CS0108 // Member hides inherited member; missing new keyword
     public GameObject eyes;
     public Camera playerCamera;
