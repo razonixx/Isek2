@@ -57,6 +57,14 @@ public class Bullet : MonoBehaviour
                         other.gameObject.GetComponentInChildren<Skeleton>().playerIsInRoom = false;
                     }
                     break;
+                case "UnityChan":
+                    other.gameObject.GetComponentInChildren<UnityChan>().HP -= (power/2);
+                    if (freeze)
+                    {
+                        other.gameObject.GetComponent<UnityChan>().animator.speed = 0;
+                        other.gameObject.GetComponent<UnityChan>().playerIsInRoom = false;
+                    }
+                    break;
                 default:
                     Debug.Log("Trigger enter with: " + other.gameObject.name);
                     break;
