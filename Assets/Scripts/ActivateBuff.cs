@@ -21,7 +21,7 @@ public class ActivateBuff : MonoBehaviour {
 	void Update () {
 		
 	}
-
+    
     public void ActBuff(string buff)
     {
         switch(buff)
@@ -36,14 +36,21 @@ public class ActivateBuff : MonoBehaviour {
             case "Attack":
                 player.startingPower += 10;
                 bulletRenderer.sharedMaterial.color = Color.red;
-                buffText.text = "Damage increased by 10";
+                buffText.text = "Damage increased by 10!";
                 StartCoroutine(SendMessage());
                 break;
 
             case "Freeze":
                 player.isFreeze = true;
                 bulletRenderer.sharedMaterial.color = Color.white;
-                buffText.text = "Your shots now freeze the target";
+                buffText.text = "Freezing shots!";
+                StartCoroutine(SendMessage());
+                break;
+
+            case "Poison":
+                player.isPoison = true;
+                bulletRenderer.sharedMaterial.color = Color.green;
+                buffText.text = "Poison shots!";
                 StartCoroutine(SendMessage());
                 break;
         }

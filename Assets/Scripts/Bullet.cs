@@ -7,6 +7,7 @@ public class Bullet : MonoBehaviour
     private Player player;
     public int power;
     public bool freeze = false;
+    public bool poison = false;
 
     // Use this for initialization
     void Start()
@@ -16,6 +17,7 @@ public class Bullet : MonoBehaviour
         GetComponent<Rigidbody>().AddRelativeForce(new Vector3(0, 0, GameObject.Find("Player").GetComponent<Player>().bulletFlightDistance), ForceMode.Impulse);
         power = player.startingPower;
         freeze = player.isFreeze;
+        poison = player.isPoison;
     }
 
     // Update is called once per frame
@@ -42,7 +44,7 @@ public class Bullet : MonoBehaviour
                     if(freeze)
                     {
                         other.gameObject.GetComponent<Zombie>().animator.speed = 0;
-                    }
+                    }   
                     break;
                 case "Imp":
                     other.gameObject.GetComponentInChildren<Imp>().HP -= power * 100;

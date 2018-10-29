@@ -9,6 +9,7 @@ public class Skeleton : MonoBehaviour {
     public int HP;
     public Camera cam;
     public bool playerIsInRoom;
+    public bool poisoned;
     public AudioClip onHitSound;
     private AudioSource audioSource;
     private bool isAttacking;
@@ -69,10 +70,14 @@ public class Skeleton : MonoBehaviour {
             GameObject.Find("Player").GetComponent<Player>().HP -= 15;
             GameObject.Find("Player").GetComponent<Player>().UpdateHPText();
         }
+        if(GameObject.Find("Tear").GetComponent<Bullet>().poison)
+        {
+            poisoned = true;
+        }
     }
     IEnumerator attack()
     {
-        while(true)
+        while (true)
         {
             yield return new WaitForSeconds(.3f);
             animator.SetTrigger("IsNearPlayer");
