@@ -209,7 +209,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   power: 18
-  freeze: 1
+  freeze: 0
+  poison: 0
+  homing: 1
 --- !u!135 &135916819856024514
 SphereCollider:
   m_ObjectHideFlags: 1

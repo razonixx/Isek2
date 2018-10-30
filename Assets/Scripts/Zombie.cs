@@ -11,6 +11,8 @@ public class Zombie : MonoBehaviour {
     private AudioSource audioSource;
     public Animator animator;
     public bool poisoned;
+    private int dot;
+    private int currentHP;
 
     // Use this for initialization
     void Start()
@@ -19,6 +21,9 @@ public class Zombie : MonoBehaviour {
         animator.SetFloat("Zombie Speed Multiplier", speed);
         audioSource = GetComponent<AudioSource>();
         audioSource.clip = onHitSound;
+        dot = 0;
+        currentHP = HP;
+        
     }
 	
 	// Update is called once per frame
@@ -29,6 +34,14 @@ public class Zombie : MonoBehaviour {
             this.gameObject.transform.parent.GetComponentInParent<ManageDoor>().enemies.Remove(this.gameObject);
             Destroy(this.gameObject);
         }
+        if(currentHP != HP)
+        {
+        }
+
+        if(poisoned)
+        {
+            StartCoroutine(DOT());
+        }
 	}
 
     private void OnTriggerEnter(Collider other)
@@ -36,6 +49,7 @@ public class Zombie : MonoBehaviour {
         if (other.gameObject.tag == "Tear")
         {
             audioSource.Play();
+
         }
         //Debug.Log("Entered collider of: " + other.gameObject.tag);
         if (other.gameObject.tag == "Wall")
@@ -48,5 +62,21 @@ public class Zombie : MonoBehaviour {
             GameObject.Find("Player").GetComponent<Player>().HP -= 30;
             GameObject.Find("Player").GetComponent<Player>().UpdateHPText();
         }
+    }
+
+    IEnumerator DOT()
+    {
+        while(poisoned) {
+            yield return new WaitForSecondsRealtime(5f);
+            HP -= 1;
+            dot += 1;
+            if(!(dot <= 5))
+            {
+                poisoned = false;
+                dot = 0;
+            }
+            
+        }
+      
     }
 }

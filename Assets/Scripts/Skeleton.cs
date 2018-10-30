@@ -14,10 +14,12 @@ public class Skeleton : MonoBehaviour {
     private AudioSource audioSource;
     private bool isAttacking;
     public  Animator animator;
+    private int dot;
 	void Start () {
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
         audioSource.clip = onHitSound;
+        dot = 0;
     }
 
     // Update is called once per frame
@@ -79,5 +81,21 @@ public class Skeleton : MonoBehaviour {
             animator.SetTrigger("IsNearPlayer");
             isAttacking = true;
         }
+    }
+    IEnumerator DOT()
+    {
+        while (poisoned)
+        {
+            yield return new WaitForSecondsRealtime(5f);
+            HP -= 20;
+            dot += 1;
+            if (!(dot <= 60))
+            {
+                poisoned = false;
+                dot = 0;
+            }
+
+        }
+
     }
 }

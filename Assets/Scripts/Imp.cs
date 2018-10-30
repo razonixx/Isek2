@@ -7,6 +7,8 @@ public class Imp : MonoBehaviour {
     public int HP;
     public int attackDelay;
     private bool isShooting;
+    public bool poisoned;
+    private int dot;
     // Use this for initialization
     void Start () {
         isShooting = false;
@@ -28,6 +30,10 @@ public class Imp : MonoBehaviour {
         {
             StopAllCoroutines();
             isShooting = false;
+        }
+        if (poisoned)
+        {
+            StartCoroutine(DOT());
         }
     }
 
@@ -60,5 +66,22 @@ public class Imp : MonoBehaviour {
             Destroy(bulletInst, 3);
             isShooting = true;
         }
+    }
+
+    IEnumerator DOT()
+    {
+        while (poisoned)
+        {
+            yield return new WaitForSecondsRealtime(5f);
+            HP -= 1;
+            dot += 1;
+            if (!(dot <= 20))
+            {
+                poisoned = false;
+                dot = 0;
+            }
+
+        }
+
     }
 }

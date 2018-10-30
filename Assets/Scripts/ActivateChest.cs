@@ -15,7 +15,7 @@ public class ActivateChest : MonoBehaviour
     private bool buffGiven = false;
     public AudioClip audioClip;
     private AudioSource audioSource;
-    public bool[] buffs;
+    public bool[] buffs;                        //Optimizar esto después. Cambiar atributo a private e igualarlo a buffs[] de jugador al principio
     private int buffNum;
 
     [HideInInspector]
@@ -64,10 +64,16 @@ public class ActivateChest : MonoBehaviour
                 if (canClose) _open = !_open; else _open = true;
                 if(!buffGiven)
                 {
-                    string buff = buffList[(int)Mathf.Floor(Random.value * buffList.Length)];
-                    Debug.Log(buff);
+                    buffs = GameObject.Find("Player").GetComponent<Player>().buffs;
+                    do
+                    {
+                        buffNum = (int)Mathf.Floor(Random.value * buffList.Length);
+                    } while (buffs[buffNum]);
+
+                    string buff = buffList[buffNum];
                     player.GetComponent<ActivateBuff>().ActBuff(buff);
                     buffGiven = true;
+                    GameObject.Find("Player").GetComponent<Player>().buffs[buffNum] = true;
                     audioSource.Play();
                 }
                 text.text = "";

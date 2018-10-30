@@ -8,6 +8,9 @@ public class Bullet : MonoBehaviour
     public int power;
     public bool freeze = false;
     public bool poison = false;
+    public bool homing = false;
+    public Transform target;
+    float speed = 10.0f;
 
     // Use this for initialization
     void Start()
@@ -17,7 +20,7 @@ public class Bullet : MonoBehaviour
         GetComponent<Rigidbody>().AddRelativeForce(new Vector3(0, 0, GameObject.Find("Player").GetComponent<Player>().bulletFlightDistance), ForceMode.Impulse);
         power = player.startingPower;
         freeze = player.isFreeze;
-        poison = player.isPoison;
+        poison = player.isPoison;       
     }
 
     // Update is called once per frame
@@ -45,13 +48,17 @@ public class Bullet : MonoBehaviour
                     {
                         other.gameObject.GetComponent<Zombie>().animator.speed = 0;
                     }   
-                    if(poison)
+                    if(poison && !other.gameObject.GetComponent<Zombie>().poisoned)
                     {
                         other.gameObject.GetComponent<Zombie>().poisoned = true;
-                    }
+                    }                   
                     break;
                 case "Imp":
-                    other.gameObject.GetComponentInChildren<Imp>().HP -= power * 100;
+                    other.gameObject.GetComponentInChildren<Imp>().HP -= power * 100;                   
+                    if (poison && !other.gameObject.GetComponentInChildren<Imp>().poisoned)
+                    {
+                        other.gameObject.GetComponentInChildren<Imp>().poisoned = true;
+                    }
                     break;
                 case "Skeleton":
                     other.gameObject.GetComponentInChildren<Skeleton>().HP -= power;
@@ -59,6 +66,10 @@ public class Bullet : MonoBehaviour
                     {
                         other.gameObject.GetComponentInChildren<Skeleton>().animator.speed = 0;
                         other.gameObject.GetComponentInChildren<Skeleton>().playerIsInRoom = false;
+                    }
+                    if (poison && !other.gameObject.GetComponent<Skeleton>().poisoned)
+                    {
+                        other.gameObject.GetComponent<Skeleton>().poisoned = true;
                     }
                     break;
                 case "UnityChan":

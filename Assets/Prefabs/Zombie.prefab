@@ -1376,6 +1376,8 @@ MonoBehaviour:
   speed: 3
   HP: 40
   onHitSound: {fileID: 8300000, guid: 24d3059371eef6046af0f61e196d796f, type: 3}
+  animator: {fileID: 0}
+  poisoned: 0
 --- !u!137 &137008136693932092
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

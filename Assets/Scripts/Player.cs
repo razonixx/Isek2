@@ -24,6 +24,7 @@ public class Player : MonoBehaviour
     public Text HPText;
     public AudioClip audioClip;
     public int startingPower = 20;
+    public bool[] buffs;
     private AudioSource audioSource;
 
     private bool isShooting = false;
