@@ -9,7 +9,7 @@ public class BossRoomDoorManager : MonoBehaviour {
     public GameObject[] doors;
     public GameObject darkPlane;
     private AudioSource audioSource;
-    private AudioClip audioClip;
+    public AudioClip audioClip;
     // Use this for initialization
     void Start()
     {
@@ -35,6 +35,8 @@ public class BossRoomDoorManager : MonoBehaviour {
         {
             if (other.GetComponent<Player>().hasBossKey)
             {
+                audioSource.Play();
+                StartCoroutine(closeDoor());
                 foreach (GameObject door in doors)
                 {
                     door.SetActive(false);
@@ -47,6 +49,18 @@ public class BossRoomDoorManager : MonoBehaviour {
                     }
                 }
                 darkPlane.SetActive(false);
+            }
+        }
+    }
+
+    IEnumerator closeDoor()
+    {
+        while(true)
+        {
+            yield return new WaitForSeconds(1f);
+            foreach (GameObject door in doors)
+            {
+                door.SetActive(true);
             }
         }
     }

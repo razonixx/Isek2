@@ -46,7 +46,10 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update ()
     {
-     
+        if(hasBossKey)
+        {
+            audioSource.Stop();
+        }
         SetPlayerPosition();
         if(Input.GetMouseButton(0) && !isShooting)
         {

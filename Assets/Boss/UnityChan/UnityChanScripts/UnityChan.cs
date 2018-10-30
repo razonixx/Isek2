@@ -7,7 +7,7 @@ public class UnityChan : MonoBehaviour {
     public GameObject player;
     public bool playerIsInRoom = false;
 
-    public int HP = 100;
+    public int HP = 300;
     public int attack = 25;
     // Use this for initialization
     void Start () {

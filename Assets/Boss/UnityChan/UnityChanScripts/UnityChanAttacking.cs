@@ -5,12 +5,14 @@ using UnityEngine;
 public class UnityChanAttacking : MonoBehaviour {
     private GameObject player;
     private Animator animator;
+    private UnityChan uc;
     // Use this for initialization
     void Start () {
         player = GameObject.Find("Player");
         animator = this.GetComponent<Animator>();
+        uc = this.transform.GetComponent<UnityChan>();
         StartCoroutine(damage());
-        player.GetComponent<Player>().HP -= 15;
+        player.GetComponent<Player>().HP -= uc.attack;
         player.GetComponent<Player>().UpdateHPText();
     }
 
@@ -30,7 +32,7 @@ public class UnityChanAttacking : MonoBehaviour {
         while(true)
         {
             yield return new WaitForSeconds(2.1f);
-            player.GetComponent<Player>().HP -= 15;
+            player.GetComponent<Player>().HP -= uc.attack;
             player.GetComponent<Player>().UpdateHPText();
         }
     }

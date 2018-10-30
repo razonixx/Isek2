@@ -5061,7 +5061,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.48, z: 2}
+  m_Size: {x: 2, y: 1.5, z: 2}
   m_Center: {x: 0, y: 0.82, z: 0}
 --- !u!95 &95058821442676482
 Animator:
@@ -5095,7 +5095,7 @@ MonoBehaviour:
   animator: {fileID: 95058821442676482}
   player: {fileID: 0}
   playerIsInRoom: 1
-  HP: 100
+  HP: 300
   attack: 25
 --- !u!137 &137081706210278602
 SkinnedMeshRenderer:

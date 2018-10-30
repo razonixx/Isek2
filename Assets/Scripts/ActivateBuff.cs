@@ -53,6 +53,12 @@ public class ActivateBuff : MonoBehaviour {
                 buffText.text = "Poison shots!";
                 StartCoroutine(SendMessage());
                 break;
+
+            case "BossKey":
+                player.hasBossKey = true;
+                buffText.text = "You find an old key...";
+                StartCoroutine(SendMessage());
+                break;
         }
     }
 

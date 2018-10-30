@@ -167,7 +167,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1075146474414580}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: 22.6, y: 45.641, z: 36.57}
+  m_LocalPosition: {x: 28.702587, y: 108.056274, z: 8.210004}
   m_LocalScale: {x: 0.5, y: 0.4, z: 0.5}
   m_Children:
   - {fileID: 4252270056157974}
@@ -505,8 +505,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 5, y: 7.2651772, z: 4.999999}
-  m_Center: {x: 0, y: -2.6325858, z: 3}
+  m_Size: {x: 6.6444435, y: 9.694937, z: 4.999999}
+  m_Center: {x: -0.82222176, y: -3.847463, z: 3}
 --- !u!65 &65990739636022510
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -517,8 +517,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4, y: 4.9992847, z: 4}
-  m_Center: {x: 0, y: -1.4996402, z: 1}
+  m_Size: {x: 5.3431625, y: 6.2315817, z: 4}
+  m_Center: {x: -0.20304489, y: -2.1157873, z: 1}
 --- !u!82 &82304116511347576
 AudioSource:
   m_ObjectHideFlags: 1
@@ -629,10 +629,11 @@ MonoBehaviour:
   lidOpen: {fileID: 4366090233969098}
   lidClose: {fileID: 4230845928160720}
   openSpeed: 5
-  canClose: 0
+  canClose: 1
   buffList:
   - Health
   - Attack
   - Freeze
+  - BossKey
   audioClip: {fileID: 8300000, guid: d0e1d13258e06ae40a4cab3dd0999741, type: 3}
   _open: 0
