@@ -2798,6 +2798,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1818304544801244
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4708235405118318}
+  - component: {fileID: 114580836147027762}
+  m_Layer: 0
+  m_Name: ChestSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
 --- !u!1 &1821437435443040
 GameObject:
   m_ObjectHideFlags: 1
@@ -3806,6 +3822,7 @@ Transform:
   - {fileID: 4880487305514098}
   - {fileID: 4638529548565778}
   - {fileID: 4700727168211368}
+  - {fileID: 4708235405118318}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5529,6 +5546,19 @@ Transform:
   m_Father: {fileID: 4846185346359530}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4708235405118318
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1818304544801244}
+  m_LocalRotation: {x: 0.5, y: -0.5, z: -0.5, w: -0.5}
+  m_LocalPosition: {x: -7.54434, y: 0.057373047, z: -1.1247978}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4132191027208410}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 270, y: 90, z: 0}
 --- !u!4 &4712093724098000
 Transform:
   m_ObjectHideFlags: 1
@@ -9480,7 +9510,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20664c07f2b17004f9a602b944177929, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chestSpawn: {fileID: 0}
+  chestSpawn: {fileID: 1818304544801244}
   enemies:
   - {fileID: 1424808941192368}
   - {fileID: 1208461133682434}
@@ -9689,6 +9719,7 @@ MonoBehaviour:
   HP: 40
   onHitSound: {fileID: 0}
   animator: {fileID: 0}
+  poisoned: 0
 --- !u!114 &114388443029266092
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9760,6 +9791,18 @@ MonoBehaviour:
   poisoned: 0
   onHitSound: {fileID: 0}
   animator: {fileID: 0}
+--- !u!114 &114580836147027762
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1818304544801244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d66dbb290426ed4c8e43aad5f0499ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chest: {fileID: 1075146474414580, guid: edee8fcbf0b79124ea854eafd3171e03, type: 2}
 --- !u!114 &114709058140517922
 MonoBehaviour:
   m_ObjectHideFlags: 1

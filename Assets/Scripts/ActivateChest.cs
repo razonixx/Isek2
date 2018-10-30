@@ -39,6 +39,7 @@ public class ActivateChest : MonoBehaviour
         {
             ChestClicked(lidClose.rotation);
         }
+        Debug.Log((int)Mathf.Floor(Random.value * buffList.Length));
     }
 
     // Rotate the lid to the requested rotation
@@ -63,16 +64,10 @@ public class ActivateChest : MonoBehaviour
                 if (canClose) _open = !_open; else _open = true;
                 if(!buffGiven)
                 {
-                    do
-                    {
-                        
-                        buffNum = (int)Mathf.Floor(Random.Range(0f, buffList.Length));
-                        Debug.Log(buffList.Length);
-                    } while (buffs[buffNum]);
-                    
-                    player.GetComponent<ActivateBuff>().ActBuff(buffList[buffNum]);
+                    string buff = buffList[(int)Mathf.Floor(Random.value * buffList.Length)];
+                    Debug.Log(buff);
+                    player.GetComponent<ActivateBuff>().ActBuff(buff);
                     buffGiven = true;
-                    buffs[buffNum] = true;
                     audioSource.Play();
                 }
                 text.text = "";
