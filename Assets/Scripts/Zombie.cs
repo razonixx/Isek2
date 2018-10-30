@@ -10,6 +10,7 @@ public class Zombie : MonoBehaviour {
     public AudioClip onHitSound;
     private AudioSource audioSource;
     public Animator animator;
+    public bool poisoned;
 
     // Use this for initialization
     void Start()

@@ -71,6 +71,7 @@ public class Player : MonoBehaviour
         hCamera += CamR * Input.GetAxis("Mouse X");
         transform.eulerAngles = new Vector3(0.0f, hCamera, 0.0f);
         mapCamera.transform.position = new Vector3(this.transform.position.x, mapCamera.transform.position.y, this.transform.position.z);
+        Cursor.lockState = CursorLockMode.Locked;
     }
     void SetPlayerPosition()
     {

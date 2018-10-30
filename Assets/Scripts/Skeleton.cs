@@ -70,10 +70,6 @@ public class Skeleton : MonoBehaviour {
             GameObject.Find("Player").GetComponent<Player>().HP -= 15;
             GameObject.Find("Player").GetComponent<Player>().UpdateHPText();
         }
-        if(GameObject.Find("Tear").GetComponent<Bullet>().poison)
-        {
-            poisoned = true;
-        }
     }
     IEnumerator attack()
     {

@@ -15,6 +15,8 @@ public class ActivateChest : MonoBehaviour
     private bool buffGiven = false;
     public AudioClip audioClip;
     private AudioSource audioSource;
+    public bool[] buffs;
+    private int buffNum;
 
     [HideInInspector]
     public bool _open;							// Is the chest opened
@@ -61,8 +63,16 @@ public class ActivateChest : MonoBehaviour
                 if (canClose) _open = !_open; else _open = true;
                 if(!buffGiven)
                 {
-                    player.GetComponent<ActivateBuff>().ActBuff(buffList[(int)Mathf.Floor(Random.value * buffList.Length)]);
+                    do
+                    {
+                        
+                        buffNum = (int)Mathf.Floor(Random.Range(0f, buffList.Length));
+                        Debug.Log(buffList.Length);
+                    } while (buffs[buffNum]);
+                    
+                    player.GetComponent<ActivateBuff>().ActBuff(buffList[buffNum]);
                     buffGiven = true;
+                    buffs[buffNum] = true;
                     audioSource.Play();
                 }
                 text.text = "";

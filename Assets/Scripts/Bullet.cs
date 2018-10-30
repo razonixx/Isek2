@@ -45,6 +45,10 @@ public class Bullet : MonoBehaviour
                     {
                         other.gameObject.GetComponent<Zombie>().animator.speed = 0;
                     }   
+                    if(poison)
+                    {
+                        other.gameObject.GetComponent<Zombie>().poisoned = true;
+                    }
                     break;
                 case "Imp":
                     other.gameObject.GetComponentInChildren<Imp>().HP -= power * 100;
