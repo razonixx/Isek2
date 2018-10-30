@@ -41,14 +41,14 @@ public class Imp : MonoBehaviour {
     {
         RaycastHit hit;
 
-        if (Physics.Linecast(transform.parent.position, toCheck.transform.position, out hit))
+        if (Physics.Linecast(transform.parent.GetChild(3).position, toCheck.transform.position, out hit))
         {
             if (hit.transform.tag == toCheck.tag)
             {
-                //Debug.Log("Imp ray collisioned with: Player");
+                Debug.Log("Imp ray collisioned with: Player");
                 return true;
             }
-            //Debug.Log("Imp ray collisioned with: " + hit.transform.gameObject.name);
+            Debug.Log("Imp ray collisioned with: " + hit.transform.gameObject.name);
             return false;
         }
         return true;
@@ -72,16 +72,14 @@ public class Imp : MonoBehaviour {
     {
         while (poisoned)
         {
-            yield return new WaitForSecondsRealtime(5f);
             HP -= 1;
             dot += 1;
-            if (!(dot <= 20))
+            if (!(dot <= 15))
             {
                 poisoned = false;
                 dot = 0;
             }
-
+            yield return new WaitForSecondsRealtime(5f);
         }
-
     }
 }

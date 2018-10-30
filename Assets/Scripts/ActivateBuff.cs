@@ -54,6 +54,13 @@ public class ActivateBuff : MonoBehaviour {
                 StartCoroutine(SendMessage());
                 break;
 
+            case "Homing":
+                player.isHoming = true;
+                bulletRenderer.sharedMaterial.color = Color.magenta;
+                buffText.text = "Homing shots!";
+                StartCoroutine(SendMessage());
+                break;
+
             case "BossKey":
                 player.hasBossKey = true;
                 buffText.text = "You find an old key...";

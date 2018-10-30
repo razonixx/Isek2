@@ -39,7 +39,7 @@ public class ActivateChest : MonoBehaviour
         {
             ChestClicked(lidClose.rotation);
         }
-        Debug.Log((int)Mathf.Floor(Random.value * buffList.Length));
+        //Debug.Log((int)Mathf.Floor(Random.value * buffList.Length));
     }
 
     // Rotate the lid to the requested rotation
@@ -68,6 +68,8 @@ public class ActivateChest : MonoBehaviour
                     do
                     {
                         buffNum = (int)Mathf.Floor(Random.value * buffList.Length);
+                        if (buffNum == 0 || buffNum == 1)
+                            break;
                     } while (buffs[buffNum]);
 
                     string buff = buffList[buffNum];
