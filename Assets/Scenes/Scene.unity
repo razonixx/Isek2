@@ -427,7 +427,7 @@ Prefab:
     - target: {fileID: 114502804200526754, guid: 7e708fc4c742ba54e8c9559a21235bf7,
         type: 2}
       propertyPath: buffs.Array.size
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4927384923260122, guid: 7e708fc4c742ba54e8c9559a21235bf7, type: 2}
       propertyPath: m_LocalPosition.x
@@ -538,12 +538,12 @@ Prefab:
     - target: {fileID: 114502804200526754, guid: 7e708fc4c742ba54e8c9559a21235bf7,
         type: 2}
       propertyPath: buffs.Array.data[0]
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114502804200526754, guid: 7e708fc4c742ba54e8c9559a21235bf7,
         type: 2}
       propertyPath: buffs.Array.data[2]
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114502804200526754, guid: 7e708fc4c742ba54e8c9559a21235bf7,
         type: 2}
@@ -553,12 +553,17 @@ Prefab:
     - target: {fileID: 114502804200526754, guid: 7e708fc4c742ba54e8c9559a21235bf7,
         type: 2}
       propertyPath: buffs.Array.data[4]
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114502804200526754, guid: 7e708fc4c742ba54e8c9559a21235bf7,
         type: 2}
       propertyPath: buffs.Array.data[1]
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114502804200526754, guid: 7e708fc4c742ba54e8c9559a21235bf7,
+        type: 2}
+      propertyPath: isFreeze
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e708fc4c742ba54e8c9559a21235bf7, type: 2}

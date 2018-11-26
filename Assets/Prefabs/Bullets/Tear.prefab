@@ -211,7 +211,8 @@ MonoBehaviour:
   power: 18
   freeze: 0
   poison: 0
-  homing: 1
+  homing: 0
+  target: {fileID: 0}
 --- !u!135 &135916819856024514
 SphereCollider:
   m_ObjectHideFlags: 1

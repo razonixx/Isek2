@@ -15,11 +15,11 @@ public class ActivateChest : MonoBehaviour
     private bool buffGiven = false;
     public AudioClip audioClip;
     private AudioSource audioSource;
-    public bool[] buffs;                        //Optimizar esto después. Cambiar atributo a private e igualarlo a buffs[] de jugador al principio
+    public bool[] buffs;                        // Optimizar esto después. Cambiar atributo a private e igualarlo a buffs[] de jugador al principio
     private int buffNum;
 
     [HideInInspector]
-    public bool _open;							// Is the chest opened
+    public bool _open;							// Is the chest open
 
     private void Start()
     {
