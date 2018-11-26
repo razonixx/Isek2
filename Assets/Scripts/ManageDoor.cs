@@ -47,6 +47,7 @@ public class ManageDoor : MonoBehaviour {
         //skeletons = transform.gameObject.FindGameObjectsWithTag("Skeleton");
         if (other.gameObject.tag == "Player")
         {
+            other.gameObject.GetComponent<Player>().currentRoom = this.gameObject;
             foreach (GameObject enemy in enemies)
             {
                 if (enemy.gameObject.tag == "Skeleton")

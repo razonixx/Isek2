@@ -9971,8 +9971,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies:
-  - {fileID: 1076552897565690, guid: d5312ee79db40884780193ee8cd10389, type: 2}
-  - {fileID: 1905738266856150, guid: 68b573e013c30fb4bb9610daf862fe41, type: 2}
+  - {fileID: 1938401262075288, guid: 7a4d3402f65420a4daddf3c50d351bf9, type: 2}
   - {fileID: 1262568153299578, guid: 41aa38973959e1446be632e658ac4901, type: 2}
 --- !u!114 &114567352862026852
 MonoBehaviour:
@@ -10055,8 +10054,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies:
-  - {fileID: 1076552897565690, guid: d5312ee79db40884780193ee8cd10389, type: 2}
-  - {fileID: 1905738266856150, guid: 68b573e013c30fb4bb9610daf862fe41, type: 2}
+  - {fileID: 1938401262075288, guid: 7a4d3402f65420a4daddf3c50d351bf9, type: 2}
   - {fileID: 1262568153299578, guid: 41aa38973959e1446be632e658ac4901, type: 2}
 --- !u!114 &114774876557042048
 MonoBehaviour:

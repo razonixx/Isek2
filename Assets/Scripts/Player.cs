@@ -13,10 +13,13 @@ public class Player : MonoBehaviour
     public float attackSpeed;
     public float bulletFlightDistance;
     public float CamR = 0.4f;
-    public bool isDualWeilding = false;
+    private bool isDualWeilding = false;
     public bool isFreeze = false;
     public bool isPoison = false;
+    public bool isHoming = false;
     public bool hasBossKey = false;
+    public GameObject closestEnemy;
+    public GameObject currentRoom;
 #pragma warning disable CS0108 // Member hides inherited member; missing new keyword
     public GameObject eyes;
     public Camera playerCamera;
@@ -88,6 +91,20 @@ public class Player : MonoBehaviour
 
     void CreateBullet()
     {
+        if (isHoming && currentRoom != null)
+        {
+            float distance = 100;
+            List<GameObject> enemies = currentRoom.transform.gameObject.GetComponent<ManageDoor>().enemies;
+            foreach (GameObject enemy in enemies)
+            {
+                float distanceToEnemy = Vector3.Distance(this.transform.position, enemy.transform.position);
+                if (distance > distanceToEnemy)
+                {
+                    distance = distanceToEnemy;
+                    closestEnemy = enemy;
+                }
+            }
+        }
         Instantiate(bullet, eyes.transform.position, transform.rotation);
     }
 

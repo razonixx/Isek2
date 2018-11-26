@@ -635,8 +635,9 @@ MonoBehaviour:
   - Attack
   - Freeze
   - Poison
+  - Homing
   - BossKey
   - AtkSpeed
   audioClip: {fileID: 8300000, guid: d0e1d13258e06ae40a4cab3dd0999741, type: 3}
-  buffs: 0000000000
+  buffs: 000000000000
   _open: 0

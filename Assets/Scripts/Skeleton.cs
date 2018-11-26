@@ -39,6 +39,10 @@ public class Skeleton : MonoBehaviour {
             StopAllCoroutines();
             isAttacking = false;
         }
+        if (poisoned)
+        {
+            StartCoroutine(DOT());
+        }
     }
 
     private bool IsInView(GameObject origin, GameObject toCheck)
@@ -86,16 +90,14 @@ public class Skeleton : MonoBehaviour {
     {
         while (poisoned)
         {
-            yield return new WaitForSecondsRealtime(5f);
-            HP -= 20;
+            HP -= 1;
             dot += 1;
-            if (!(dot <= 60))
+            if (!(dot <= 15))
             {
                 poisoned = false;
                 dot = 0;
             }
-
+            yield return new WaitForSecondsRealtime(5f);
         }
-
     }
 }

@@ -67,16 +67,15 @@ public class Zombie : MonoBehaviour {
     IEnumerator DOT()
     {
         while(poisoned) {
-            yield return new WaitForSecondsRealtime(5f);
             HP -= 1;
             dot += 1;
-            if(!(dot <= 5))
+            if(!(dot <= 25))
             {
                 poisoned = false;
                 dot = 0;
             }
-            
+            yield return new WaitForSecondsRealtime(5f);
         }
-      
+
     }
 }

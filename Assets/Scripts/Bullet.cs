@@ -20,12 +20,21 @@ public class Bullet : MonoBehaviour
         GetComponent<Rigidbody>().AddRelativeForce(new Vector3(0, 0, GameObject.Find("Player").GetComponent<Player>().bulletFlightDistance), ForceMode.Impulse);
         power = player.startingPower;
         freeze = player.isFreeze;
-        poison = player.isPoison;       
+        poison = player.isPoison;    
+        homing = player.isHoming;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(homing)
+        {
+            if (player.closestEnemy != null)
+            {
+                transform.LookAt(player.closestEnemy.transform);
+                transform.Translate(Vector3.forward * Time.deltaTime * 8);
+            }
+        }
 
     }
 
