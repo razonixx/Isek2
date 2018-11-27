@@ -63,8 +63,17 @@ public class ActivateBuff : MonoBehaviour {
 
             case "BossKey":
                 player.hasBossKey = true;
-                buffText.text = "You find an old key...";
+                buffText.text = "You found an old key...";
                 StartCoroutine(SendMessage());
+                break;
+
+            case "AtkSpeed":
+                player.attackSpeed -= 10;
+                buffText.text = "Attack speed increased!";
+                StartCoroutine(SendMessage());
+                break;
+
+            case "Range":
                 break;
         }
     }
