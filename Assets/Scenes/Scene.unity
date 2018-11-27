@@ -335,11 +335,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114502804200526754, guid: 7e708fc4c742ba54e8c9559a21235bf7,
         type: 2}
-<<<<<<< HEAD
-      propertyPath: isFreeze
-=======
       propertyPath: buffs.Array.data[5]
->>>>>>> acbdc4fbc57ba1141c2992730a720f967c0eedac
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 20515355260021950, guid: 7e708fc4c742ba54e8c9559a21235bf7,
