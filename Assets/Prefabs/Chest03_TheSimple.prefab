@@ -166,8 +166,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1075146474414580}
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: 28.702587, y: 108.056274, z: 8.210004}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: -0.7071068, w: 0}
+  m_LocalPosition: {x: 22.612883, y: 45.742, z: 45.036}
   m_LocalScale: {x: 0.5, y: 0.4, z: 0.5}
   m_Children:
   - {fileID: 4252270056157974}
@@ -176,7 +176,7 @@ Transform:
   - {fileID: 4165000668445150}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 270, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 270, y: 0, z: 180}
 --- !u!4 &4165000668445150
 Transform:
   m_ObjectHideFlags: 1
@@ -637,6 +637,10 @@ MonoBehaviour:
   - Poison
   - Homing
   - BossKey
+  - AtkSpeed
+  - Distance
+  - Nuke
+  - Star
   audioClip: {fileID: 8300000, guid: d0e1d13258e06ae40a4cab3dd0999741, type: 3}
   buffs: 000000000000
   _open: 0

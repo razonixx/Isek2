@@ -13,7 +13,6 @@ public class UnityChanAttacking : MonoBehaviour {
         uc = this.transform.GetComponent<UnityChan>();
         StartCoroutine(damage());
         player.GetComponent<Player>().HP -= uc.attack;
-        player.GetComponent<Player>().UpdateHPText();
     }
 
     // Update is called once per frame
@@ -33,7 +32,6 @@ public class UnityChanAttacking : MonoBehaviour {
         {
             yield return new WaitForSeconds(2.1f);
             player.GetComponent<Player>().HP -= uc.attack;
-            player.GetComponent<Player>().UpdateHPText();
         }
     }
 }

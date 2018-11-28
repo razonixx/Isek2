@@ -9,9 +9,12 @@ public class Imp : MonoBehaviour {
     private bool isShooting;
     public bool poisoned;
     private int dot;
+    private Player player;
+
     // Use this for initialization
     void Start () {
         isShooting = false;
+        player = GameObject.Find("Player").GetComponent<Player>();
         //StartCoroutine(ShootFireball());
     }
 
@@ -19,6 +22,7 @@ public class Imp : MonoBehaviour {
     void Update () {
         if (HP <= 0)
         {
+            player.score += 525;
             this.gameObject.transform.parent.GetComponentInParent<ManageDoor>().enemies.Remove(transform.parent.gameObject);
             Destroy(transform.parent.gameObject);
         }

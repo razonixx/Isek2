@@ -10,6 +10,7 @@ public class ManageDoor : MonoBehaviour {
     public List<GameObject> skeletons = new List<GameObject>();
     public GameObject[] doors;
     public GameObject darkPlane;
+    public int enemyCount = -1;
     private AudioSource audioSource;
     private AudioClip audioClip;
     // Use this for initialization
@@ -25,7 +26,7 @@ public class ManageDoor : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        if (enemies.Count == 0)
+        if (enemies.Count == 0 || enemyCount == 0)
         {
             if(chestSpawn != null)
             {
@@ -69,5 +70,6 @@ public class ManageDoor : MonoBehaviour {
             }
             darkPlane.SetActive(false);
         }
+        enemyCount = enemies.Count;
     }
 }

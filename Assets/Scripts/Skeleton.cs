@@ -14,11 +14,13 @@ public class Skeleton : MonoBehaviour {
     private AudioSource audioSource;
     private bool isAttacking;
     public  Animator animator;
+    private Player player;
     private int dot;
 	void Start () {
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
         audioSource.clip = onHitSound;
+        player = GameObject.Find("Player").GetComponent<Player>();
         dot = 0;
     }
 
@@ -31,6 +33,7 @@ public class Skeleton : MonoBehaviour {
         }
         if (HP <= 0)
         {
+            player.score += 500;
             this.gameObject.transform.parent.GetComponentInParent<ManageDoor>().enemies.Remove(this.gameObject);
             Destroy(this.gameObject);
         }
@@ -72,9 +75,11 @@ public class Skeleton : MonoBehaviour {
         }
         if (other.gameObject.tag == "Player" && !isAttacking)
         {
+            if(!other.gameObject.GetComponent<Player>().isStar)
+            {
+                player.HP --;
+            }
             StartCoroutine(attack());
-            GameObject.Find("Player").GetComponent<Player>().HP -= 15;
-            GameObject.Find("Player").GetComponent<Player>().UpdateHPText();
         }
     }
     IEnumerator attack()

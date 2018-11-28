@@ -68,7 +68,7 @@ public class ActivateChest : MonoBehaviour
                     do
                     {
                         buffNum = (int)Mathf.Floor(Random.value * buffList.Length);
-                        if (buffNum == 0 || buffNum == 1)
+                        if (buffNum == 0 || buffNum == 1 || buffNum == 6 || buffNum == 7 || buffNum == 8 || buffNum == 9)
                             break;
                     } while (buffs[buffNum]);
 

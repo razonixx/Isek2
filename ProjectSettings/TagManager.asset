@@ -15,6 +15,7 @@ TagManager:
   - Room
   - Skeleton
   - UnityChan
+  - UnityChan2
   layers:
   - Default
   - TransparentFX

@@ -27,9 +27,8 @@ public class ActivateBuff : MonoBehaviour {
         switch(buff)
         {
             case "Health":
-                player.HP += 30;
-                player.UpdateHPText();
-                buffText.text = "HP increased by 30!";
+                player.HP += 2;
+                buffText.text = "Found a heart!";
                 StartCoroutine(SendMessage());
                 break;
 
@@ -64,6 +63,30 @@ public class ActivateBuff : MonoBehaviour {
             case "BossKey":
                 player.hasBossKey = true;
                 buffText.text = "You find an old key...";
+                StartCoroutine(SendMessage());
+                break;
+
+            case "AtkSpeed":
+                player.attackSpeed -= 10;
+                buffText.text = "Attack speed increased!";
+                StartCoroutine(SendMessage());
+                break;
+
+            case "Distance":
+                player.bulletFlightDistance += 5;
+                buffText.text = "Bullet flight distance increased!";
+                StartCoroutine(SendMessage());
+                break;
+
+            case "Nuke":
+                player.numNuke += 1;
+                buffText.text = "You got a nuke! Press I to use it";
+                StartCoroutine(SendMessage());
+                break;
+
+            case "Star":
+                player.stars += 1;
+                buffText.text = "You got a star! Press I to use it";
                 StartCoroutine(SendMessage());
                 break;
         }

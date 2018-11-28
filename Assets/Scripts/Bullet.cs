@@ -89,6 +89,9 @@ public class Bullet : MonoBehaviour
                         other.gameObject.GetComponent<UnityChan>().playerIsInRoom = false;
                     }
                     break;
+                case "UnityChan2":
+                    other.gameObject.GetComponentInChildren<UnityChan2>().HP -= (power / 2);
+                    break;
                 default:
                     Debug.Log("Trigger enter with: " + other.gameObject.name);
                     break;

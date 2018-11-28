@@ -479,7 +479,7 @@ MonoBehaviour:
   AudioSource: {fileID: 0}
   StartTime: 0.5
   StopTime: 0.5
-  Duration: 4
+  Duration: 2
   ForceAmount: 0
   ForceRadius: 0
   IsProjectile: 1
